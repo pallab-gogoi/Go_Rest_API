@@ -11,6 +11,7 @@ import (
 )
 
 var DB *gorm.DB //we use this global variable to interect with the database
+
 func GetDB() *gorm.DB {
 	return DB
 }
