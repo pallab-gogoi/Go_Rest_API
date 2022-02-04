@@ -7,6 +7,8 @@ import (
 	"log"
 
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+
 	"github.com/pallab-gogoi/Go_Rest_API/models"
 )
 
@@ -21,7 +23,7 @@ func Setup() {
 	dbName := "book"
 	userName := "postgres"
 	passWord := "postgres"
-	arg := "host=" + host + "port=" + port + " user=" + userName + "dbName=" + dbName + "sslmode=disable password=" + passWord
+	arg := "host=" + host + " port=" + port + " user=" + userName + " dbname=" + dbName + " sslmode=disable password=" + passWord
 	db, err := gorm.Open("postgres", arg) //this line of code creates the connection b/w this application and the database server
 	if err != nil {
 		log.Fatal(err)
